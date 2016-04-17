@@ -72,13 +72,17 @@ if [[ "$RATIO" = "4" ]] || [[ "$RATIO" = "16" ]] && [[ "$HEIGHT" -eq "0" ]]; the
     fi
 fi
 
-if [[ "$REF" == "" ]]; then
+if [[ "$REF" = "" ]]; then
     usage
     exit
 fi
 
 if [[ "$HEIGHT" = "" ]]; then
     HEIGHT=-1 
+fi
+
+if [[ "$REF" = "this"  ]]; then
+    REF=":ACTIVE:"
 fi
 
 cat << EOF
